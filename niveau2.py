@@ -41,7 +41,7 @@ dictionnaire = {
 mot = input("Tapez votre mot/phrase/chiffre !")
 
 lettres = str.split(mot)
-#print (lettres)
+print (lettres)
 for lettre in lettres:
     morse = dictionnaire.get(lettre)
     print(morse,end="")
