@@ -4,19 +4,21 @@ const originalData = fs
   .toString()
 
 var data = originalData.split("\n\n");
+let valid = 0;
 
-bloubi = data.forEach((item,i) => {
-    round1 = item.split("\n");
-    console.log(round1);
-      round1.forEach((item2, i) => {
-        console.log(item2);
-        
-        item2.replace(/\s/g, "'','");
+for (i=0; i<data.length; i++){
+  morceau = data[i].toString().split(/\n|\s/);
+  if (morceau.length == 8){
+      valid += 1;
+  } else {
+    if (!morceau.toString().includes("cid")&&morceau.length==7){
+      valid +=1;
+    } else { //atom rajoute une ligne vide à la fin de input qui se traduit par un elment vide à la fin du dernierr tableau
+      if (morceau.length > 8){
+        valid += 1;
+      }
+    }
+  }
+}
 
-    });
-  });
-
-
-
-
-console.log(bloubi);
+console.log(valid);
