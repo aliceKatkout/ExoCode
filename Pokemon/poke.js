@@ -51,6 +51,7 @@ const sortByWeight = pokedex.sort((a,b) => {
 
 function evolutil(pokemon){
   indexPoke = pokedex.findIndex(pokedex => pokedex.name === pokemon);
+  console.log(indexPoke);
   evolOuPas = pokedex[indexPoke].next_evolution
   if (!evolOuPas){
     console.log("Pas d'évolution pour "+pokemon);
@@ -63,4 +64,4 @@ function evolutil(pokemon){
   }
 }
 
-evolutil("Bulbasaur");
+evolutil("Venusaur");
