@@ -16,6 +16,8 @@ for (i=0; i<data.length; i++){
     } else { //atom rajoute une ligne vide à la fin de input qui se traduit par un elment vide à la fin du dernierr tableau
       if (morceau.length > 8){
         valid += 1;
+        morceau.pop();
+        console.log(morceau);
       }
     }
   }
