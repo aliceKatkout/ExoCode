@@ -51,17 +51,18 @@ const sortByWeight = pokedex.sort((a,b) => {
 
 function evolutil(pokemon){
   indexPoke = pokedex.findIndex(pokedex => pokedex.name === pokemon);
-  console.log(indexPoke);
-  evolOuPas = pokedex[indexPoke].next_evolution
-  if (!evolOuPas){
-    console.log("Pas d'évolution pour "+pokemon);
-  } else {
-    numberOfEvolution = pokedex[indexPoke].next_evolution.length;
-    for (let i=0; i<numberOfEvolution; i++){
-      evolutions = pokedex[indexPoke].next_evolution[i].name;
-      console.log(pokemon+" évolue en "+evolutions);
+  if (indexPoke !== -1){
+    evolOuPas = pokedex[indexPoke].next_evolution
+    if (!evolOuPas){
+      console.log("Pas d'évolution pour "+pokemon);
+    } else {
+      numberOfEvolution = pokedex[indexPoke].next_evolution.length;
+      for (let i=0; i<numberOfEvolution; i++){
+        evolutions = pokedex[indexPoke].next_evolution[i].name;
+        console.log(pokemon+" évolue en "+evolutions);
+      }
     }
   }
 }
 
-evolutil("Venusaur");
+evolutil("BulbaZaur");
